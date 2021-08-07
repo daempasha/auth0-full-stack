@@ -3,7 +3,7 @@ import styled from "styled-components";
 const LandingContainer = styled.div`
   text-align: start;
   height: 100vh;
-  margin: 5em 25em;
+  background-color: #2b2b2b;
 `;
 
 export default LandingContainer;
