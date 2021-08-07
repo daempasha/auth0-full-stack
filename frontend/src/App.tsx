@@ -9,12 +9,14 @@ import Navbar from "./components/Navbar/navbar.component";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 import SecureRoute from "./components/SecureRoute/secureroute.component";
+import Landing from "./pages/Landing/landing.page";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Auth0ProviderWithHistory>
           <Switch>
+            <Route path="/" exact component={Landing} />
             <SecureRoute path="/dashboard" exact>
               <Navbar />
               <p>Dashboard</p>
