@@ -1,22 +1,26 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 import LoginButton from "../LoginButton/loginbutton.component";
 import LogoutButton from "../LogoutButton/logoutbutton.component";
+import NavbarContainer from "./navbar.styles";
 
 const Navbar = () => {
   const { isAuthenticated, user } = useAuth0();
 
   return (
-    <div>
-      {isAuthenticated && user && (
-        <div>
-          <img src={user.picture} alt={user.name} />
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-        </div>
-      )}
+    <NavbarContainer>
+      <div>DASHBOARD</div>
 
-      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-    </div>
+      <div>
+        {isAuthenticated ? (
+          <Link to="/settings">
+            <img className="user" src={user?.picture} width={25} />
+          </Link>
+        ) : (
+          <LoginButton />
+        )}
+      </div>
+    </NavbarContainer>
   );
 };
 
