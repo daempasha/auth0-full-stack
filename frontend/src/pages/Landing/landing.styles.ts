@@ -1,3 +1,4 @@
+import { DEVICE_WIDTH } from "helpers/constants";
 import styled from "styled-components";
 import BaseContainer from "ui/basecontainer.component";
 
@@ -19,6 +20,8 @@ const LandingContainer = styled(BaseContainer)`
     z-index: 500;
 
     display: flex;
+    flex-direction: column;
+
     justify-content: space-evenly;
     align-items: center;
 
@@ -32,6 +35,12 @@ const LandingContainer = styled(BaseContainer)`
         color: white;
       }
       width: 600px;
+    }
+  }
+
+  @media ${DEVICE_WIDTH.laptop} {
+    .content {
+      flex-direction: row;
     }
   }
 `;

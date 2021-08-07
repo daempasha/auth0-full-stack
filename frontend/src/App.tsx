@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth0-provider-with-history";
 import SecureRoute from "./components/SecureRoute/secureroute.component";
 import Landing from "./pages/Landing/landing.page";
+import Dashboard from "pages/Dashboard/dashboard.page";
+import Settings from "pages/Settings/settings.page";
 function App() {
   return (
     <div className="App">
@@ -17,8 +19,10 @@ function App() {
           <Switch>
             <Route path="/" exact component={Landing} />
             <SecureRoute path="/dashboard" exact>
-              <Navbar />
-              <p>Dashboard</p>
+              <Dashboard />
+            </SecureRoute>
+            <SecureRoute path="/settings" exact>
+              <Settings />
             </SecureRoute>
           </Switch>
         </Auth0ProviderWithHistory>

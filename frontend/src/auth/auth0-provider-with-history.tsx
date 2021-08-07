@@ -23,6 +23,7 @@ const Auth0ProviderWithHistory = ({ children }: iAuth0ProviderWithHistory) => {
         clientId={clientId}
         redirectUri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
+        useRefreshTokens
       >
         {children}
       </Auth0Provider>
