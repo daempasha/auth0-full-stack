@@ -1,8 +1,20 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "components/LoginButton/loginbutton.component";
 import ParticlesBackground from "components/ParticlesBackground/particlesbackground.component";
+import { useEffect } from "react";
+import { useHistory } from "react-router";
 import LandingContainer from "./landing.styles";
 
 const Landing = () => {
+  const history = useHistory();
+  const { isAuthenticated } = useAuth0();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push("/dashboard");
+    }
+  }, [isAuthenticated]);
+
   return (
     <LandingContainer>
       <div className="content">
