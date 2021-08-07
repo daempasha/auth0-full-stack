@@ -1,5 +1,7 @@
+import LandingContainer from "./landing.styles";
+
 const Landing = () => {
-  return <p>Landing</p>;
+  return <LandingContainer>Dashboard</LandingContainer>;
 };
 
 export default Landing;
