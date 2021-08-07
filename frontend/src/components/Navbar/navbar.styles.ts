@@ -4,6 +4,7 @@ import Navbar from "./navbar.component";
 
 const NavbarContainer = styled(BaseContainer)`
   color: white;
+  background-color: #121212;
   display: flex;
   justify-content: space-between;
   align-items: center;

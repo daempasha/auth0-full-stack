@@ -9,7 +9,14 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <div>DASHBOARD</div>
+      <div>
+        <Link
+          style={{ color: "white", textDecoration: "none" }}
+          to="/dashboard"
+        >
+          DASHBOARD
+        </Link>
+      </div>
 
       <div>
         {isAuthenticated ? (
