@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
 
 import { Auth0Provider, useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton/loginbutton.component";

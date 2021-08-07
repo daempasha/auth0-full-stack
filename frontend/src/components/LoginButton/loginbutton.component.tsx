@@ -1,10 +1,27 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const LoginButton = () => {
+interface iLoginButton {
+  screenHint?: "signup" | "signin";
+  text?: string;
+}
+const LoginButton = ({
+  screenHint = "signin",
+  text = "Sign in",
+}: iLoginButton) => {
   const { loginWithRedirect } = useAuth0();
 
-  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+  return (
+    <button
+      onClick={() =>
+        loginWithRedirect({
+          screen_hint: screenHint,
+        })
+      }
+    >
+      {text}
+    </button>
+  );
 };
 
 export default LoginButton;
